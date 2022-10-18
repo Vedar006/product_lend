@@ -112,3 +112,57 @@ a {
   grid-template-columns: repeat(12, 1fr);
   gap: var(--grid-gap);
 }
+
+.btn {
+
+  border-radius: 4px;
+  padding: 22px 47px;
+  font: 400 16px / 140% var(--font-family);
+  transition: color .3s ease-in-out, background-color .3s ease-in-out;
+
+  &--primary {
+    color: var(--light-color);
+    background-color: var(--color-accent);
+
+    &:hover {
+      background-color: var(--color-accent-hover);
+    }
+  }
+}
+
+.title {
+  margin: 0;
+  margin-bottom: var(--main-offset);
+  font: var(--middle-high-font);
+  color: var(--color-main);
+}
+
+@import 'mixins';
+
+.custom-checkbox {
+  @include custom-checkbox;
+
+
+  &__content {
+    padding-left: 35px;
+    font:var(--middle-book);
+    color:var(--color-main);
+
+    &::before {
+      top: -3px;
+      border-color: var(--color-cameo);
+      border-radius: 4px;
+      width: 24px;
+      height: 24px;
+
+    }
+
+    &::after {
+      top: -3px;
+      width: 24px;
+      height: 24px;
+      background-image: url("../img/check.svg");
+      background-size: 15px 12px;
+    }
+  }
+}

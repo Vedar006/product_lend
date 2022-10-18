@@ -1,4 +1,6 @@
 .nav {
+
+
   &__list {
     display: flex;
     align-self: center;
@@ -11,7 +13,8 @@
   }
 
   &__link {
-    font: var(--small-font);
+
+    font: var(--small-book);
     color: var(--light-color);
   }
 }
