@@ -1,0 +1,39 @@
+.about {
+  overflow: hidden;
+  height: 580px;
+  background-color: var(--color-eastbay);
+
+  &__container {
+    display: flex;
+    position: relative;
+    align-items: flex-start;
+
+  }
+
+  &__image {
+    position: absolute;
+    right: 100px;
+    top: -150%;
+    flex-shrink: 0;
+    width: 500px;
+    height: 950px;
+
+    overflow: hidden;
+    transform: rotate(15deg);
+    background-color: red;
+
+    img {
+      position: absolute;
+      max-width: none;
+      top: 0;
+      left: 50%;
+      width: 200%;
+      height: 100%;
+      object-fit: cover;
+      transform: rotate(-15deg) translateX(-50%);
+
+
+
+    }
+  }
+}

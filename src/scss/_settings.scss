@@ -128,6 +128,15 @@ a {
       background-color: var(--color-accent-hover);
     }
   }
+
+  &--secondary {
+    color: var(--light-color);
+    background-color: var(--color-main);
+
+    &:hover {
+      background-color: var(--color-main-hover);
+    }
+  }
 }
 
 .title {
@@ -145,8 +154,8 @@ a {
 
   &__content {
     padding-left: 35px;
-    font:var(--middle-book);
-    color:var(--color-main);
+    font: var(--middle-book);
+    color: var(--color-main);
 
     &::before {
       top: -3px;
