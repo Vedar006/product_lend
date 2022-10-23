@@ -2,7 +2,9 @@
 // Рекомендуется создавать отдельный файл в папке components и подключать все там
 
 // Определение операционной системы на мобильных
-import { mobileCheck } from "./functions/mobile-check";
+import {
+  mobileCheck
+} from "./functions/mobile-check";
 console.log(mobileCheck())
 
 // Определение ширины экрана
@@ -31,7 +33,7 @@ console.log(mobileCheck())
 
 // Реализация модального окна
 // import GraphModal from 'graph-modal';
-// const modal = new GraphModal();
+// const modal = new GraphModal({});
 
 // Реализация табов
 // import GraphTabs from 'graph-tabs';

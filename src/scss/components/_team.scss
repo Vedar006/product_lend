@@ -1,0 +1,43 @@
+.team {
+  position: relative;
+  padding: var(--big-offset) 0;
+  background-color: var(--color-eastbay);
+
+  &__title {
+    color: var(--light-color);
+  }
+
+  &__list {
+    position: relative;
+    z-index: 5;
+    gap: var(--main-offset) var(--second-offset);
+  }
+
+  &__figure {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+  &__item {
+    grid-column: 4 span;
+  }
+
+  &__img {
+    overflow: hidden;
+    margin-bottom: var(--second-offset);
+    border-radius: 4px;
+  }
+
+  &__subtitle {
+    display: block;
+    margin-bottom: var(--second-offset);
+    font: var(--prehigh-book);
+    color: var(--light-color);
+
+  }
+
+  &__post {
+    font: var(--middle-book);
+    color: var(--light-color);
+  }
+}
