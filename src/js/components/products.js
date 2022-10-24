@@ -1,5 +1,8 @@
 import GraphModal from 'graph-modal';
-
+import Swiper, {
+  Navigation,
+  Pagination
+} from 'swiper';
 export function products() {
   const catalogList = document.querySelector('.catalog-list');
   const catalogMore = document.querySelector('.catalog__more');
@@ -11,6 +14,14 @@ export function products() {
 
     return String(str).replace(/(\d)(?=(\d\d\d)+([^\d]|$))/g, '$1 ');
   };
+  // Подключение свайпера
+
+  const prodSlider = new Swiper('.modal-slider__container', {
+
+    slidesPerView: 1,
+    spaceBetween: 20,
+  });
+
 
   if (catalogList) {
     const loadProducts = (quantity = 5) => {
@@ -80,7 +91,9 @@ export function products() {
 
 
         const openBtnId = modal.previousActiveElement.dataset.id;
+
         loadModalData(openBtnId);
+        prodSlider.update();
       }
     });
 
