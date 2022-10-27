@@ -14,3 +14,7 @@ import {
   products
 } from "./components/products";
 products();
+import {
+  cart
+} from "./components/cart";
+cart();

@@ -41,41 +41,45 @@
               В наличии: <span>13 шт</span>
             </span>
           </div>
-          <h3 class="modal-info__title">
-            Женские кроссовки Puma Force 1 Shadow
-          </h3>
-          <div class="modal-info__rate">
-            <img src="img/Star.svg" alt="Рейтинг 5 из 5">
-            <img src="img/Star.svg" alt="">
-            <img src="img/Star.svg" alt="">
-            <img src="img/Star.svg" alt="">
-            <img src="img/Star.svg" alt="">
-          </div>
-          <div class="modal-info__sizes">
-            <span class="modal-info__subtitle">Выберите размер</span>
-            <ul class="list-reset modal-info__sizes-list modal-sizes">
+          <div class="modal-info__wrapper">
 
-              <li class="modal-sizes__item">
-                <button class="btn-reset modal-sizes__btn">36</button>
-              </li>
-              <li class="modal-sizes__item">
-                <button class="btn-reset modal-sizes__btn">36</button>
-              </li>
-              <li class="modal-sizes__item">
-                <button class="btn-reset modal-sizes__btn">36</button>
-              </li>
-              <li class="modal-sizes__item">
-                <button class="btn-reset modal-sizes__btn">36</button>
-              </li>
-              <li class="modal-sizes__item">
-                <button class="btn-reset modal-sizes__btn">36</button>
-              </li>
-            </ul>
+            <h3 class="modal-info__title">
+              Женские кроссовки Puma Force 1 Shadow
+            </h3>
+            <div class="modal-info__rate">
+              <img src="img/Star.svg" alt="Рейтинг 5 из 5">
+              <img src="img/Star.svg" alt="">
+              <img src="img/Star.svg" alt="">
+              <img src="img/Star.svg" alt="">
+              <img src="img/Star.svg" alt="">
+            </div>
+            <div class="modal-info__sizes">
+              <span class="modal-info__subtitle">Выберите размер</span>
+              <ul class="list-reset modal-info__sizes-list modal-sizes">
+
+                <li class="modal-sizes__item">
+                  <button class="btn-reset modal-sizes__btn">36</button>
+                </li>
+                <li class="modal-sizes__item">
+                  <button class="btn-reset modal-sizes__btn">36</button>
+                </li>
+                <li class="modal-sizes__item">
+                  <button class="btn-reset modal-sizes__btn">36</button>
+                </li>
+                <li class="modal-sizes__item">
+                  <button class="btn-reset modal-sizes__btn">36</button>
+                </li>
+                <li class="modal-sizes__item">
+                  <button class="btn-reset modal-sizes__btn">36</button>
+                </li>
+              </ul>
+            </div>
+            <div class="modal-info__price">
+              <span class="modal-info__current-price"> 19 789 p</span>
+              <span class="modal-info__old-price"> 20 785 p</span>
+            </div>
           </div>
-          <div class="modal-info__price">
-            <span class="modal-info__current-price"> 19 789 p</span>
-            <span class="modal-info__old-price"> 20 785 p</span>
-          </div>
+
           <button class="btn btn-reset btn--primary modal-info__order">
             Заказать
           </button>
@@ -95,7 +99,7 @@
       <div class="prod-modal__bottom prod-bottom">
         <div class="prod-bottom__column">
           <h3 class="prod-bottom__title">Описание</h3>
-          <p class="prod-bottom__descr">
+          <p class="prod-bottom__descr modal-prod-descr">
             Кроссовки Nike Blazer Mid &rsquo;77 Vintage Suede с&nbsp;винтажной подошвой возрождают стиль баскетбольных
             моделей Nike прошлого, создавая впечатление, что они хранились в&nbsp;шкафу долгие годы.
           </p>
@@ -126,10 +130,80 @@
 
         </div>
       </div>
-      <iframe class="prod-modal__video" src="https://www.youtube.com/embed/frKNeyjlkOk" title="YouTube video player"
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-        allowfullscreen></iframe>
+      <div class="prod-modal__video">
+        <iframe src="https://www.youtube.com/embed/frKNeyjlkOk" title="YouTube video player"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen></iframe>
+
+      </div>
+
+
+    </div>
+  </div>
+
+
+  <div class="graph-modal__container cart-modal" role="dialog" aria-modal="true" data-graph-target="cart-modal">
+    <button class="btn-reset js-modal-close graph-modal__close" aria-label="Закрыть модальное окно"></button>
+    <div class="modal__content">
+
+      <div class="cart-modal__top">
+        <h2 class="cart-modal__title">
+          Оформление заказа
+        </h2>
+        <span class="cart-modal__order-number">
+          Заказ 3456 67
+        </span>
+      </div>
+      <div class="cart-modal-order">
+        <div class="cart-modal-order__top">
+          <div class="cart-modal-order__quantity">
+            Товаров в заказе:<span>3 шт</span>
+          </div>
+          <div class="cart-modal-order__summ">
+            Общая сумма заказа:<span>25 789 p</span>
+          </div>
+        </div>
+        <div class="cart-modal-order__content">
+          <button class="btn-reset cart-modal-order__show">
+            Состав заказа
+            <svg>
+              <use xlink:href="img/sprite.svg#angle"></use>
+            </svg>
+          </button>
+          <ul class="list-reset cart-modal-order__list">
+
+            <li class="cart-modal-order__item">
+              <article class="cart-modal-order__product cart-modal-product">
+                <div class="cart-modal-order__image">
+                  <img src="img/product-image.jpg" alt="">
+                </div>
+                <div class="cart-modal-order__content">
+                  <div class="cart-modal-order__text">
+                    <h3 class="cart-modal-order__title">
+                      Женские кроссовки Puma Force 1 Shadow
+                    </h3>
+                    <span class="cart-modal-order__price">
+                      8 678 p
+                    </span>
+                  </div>
+                  <button class="btn-reset cart-modal-order__delete" aria-label="Удалить товар">
+                    Удалить
+                  </button>
+                </div>
+              </article>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <form class="cart-modal__form">
+
+        <input type="text" class="input" name="name" placeholder="Ваше имя">
+        <input type="text" class="input" name="tel" placeholder="Номер телефона">
+        <input type="text" class="input" name="email" placeholder="E-mail">
+        <button class="btn-reset btn btn--primary cart-modal__btn">оформить заказ</button>
+      </form>
 
     </div>
   </div>
 </div>
+<!-- 19:00 -->
