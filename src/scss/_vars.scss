@@ -1,5 +1,7 @@
 // если вы хотите использовать sass-переменные - удалите root
 // colors
+@import "_mixins.scss";
+
 :root {
   // base
   --font-family: "Open Sans", sans-serif;
@@ -38,4 +40,15 @@
   --middle-book: 400 16px / 140% var(--font-family);
   --middle-regular: 600 16px / 140% var(--font-family);
   --small-book: 400 14px / 140% var(--font-family)
+}
+
+@include mobile {
+  :root {
+    --grid-gap: 10px;
+    --main-offset: 20px;
+    --second-offset: 14px;
+    --small-offset: 8px;
+    --big-offset: 30px;
+
+  }
 }

@@ -1,17 +1,19 @@
+@import "../mixins";
 .cart-modal {
   border-radius: 4px;
   padding: var(--main-offset);
   width: 580px;
 
-  .modal__close {
-    display: none;
-  }
+
 
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: var(--main-offset);
+    @include small-tablet {
+
+    }
   }
 
   &__title {
@@ -34,6 +36,11 @@
     &:not(:last-child) {
       margin-bottom: var(--small-offset);
     }
+  }
+
+  @include small-tablet {
+    width: 100%;
+    max-width: 570px;
   }
 }
 

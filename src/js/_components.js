@@ -18,3 +18,7 @@ import {
   cart
 } from "./components/cart";
 cart();
+import {
+  focus
+} from "./components/focus";
+focus();

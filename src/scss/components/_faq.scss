@@ -1,9 +1,15 @@
+@import "../mixins";
+
 .faq {
   padding: var(--big-offset);
 
   &__list {
     margin: 0 auto;
     max-width: 880px;
+  }
+
+  @include mobile {
+    padding: 40px 0;
   }
 }
 
@@ -68,5 +74,3 @@
   padding-bottom: 18px;
   opacity: 1;
 }
-
-

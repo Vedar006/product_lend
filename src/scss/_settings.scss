@@ -1,3 +1,5 @@
+@import "mixins";
+
 html {
   box-sizing: border-box;
 }
@@ -41,6 +43,7 @@ a {
 }
 
 .btn-reset {
+  // outline: none;
   border: none;
   padding: 0;
   background: transparent;
@@ -111,10 +114,20 @@ a {
   display: grid;
   grid-template-columns: repeat(12, 1fr);
   gap: var(--grid-gap);
+
+  @include mobile {
+    grid-template-columns: repeat(8, 1fr);
+  }
+
+  @include small-mobile {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+
 }
 
 .btn {
-
+  outline: none;
   border-radius: 4px;
   padding: 22px 47px;
   font: 400 16px / 140% var(--font-family);
@@ -124,8 +137,14 @@ a {
     color: var(--light-color);
     background-color: var(--color-accent);
 
-    &:hover {
-      background-color: var(--color-accent-hover);
+    @include for-desktop {
+      &:hover {
+        background-color: var(--color-accent-hover);
+      }
+    }
+
+    &:active {
+      background-color: #8c2828;
     }
   }
 
@@ -133,9 +152,17 @@ a {
     color: var(--light-color);
     background-color: var(--color-main);
 
-    &:hover {
-      background-color: var(--color-main-hover);
+    @include for-desktop {
+      &:hover {
+        background-color: var(--color-main-hover);
+      }
+
     }
+
+    &:active {
+      background-color: #8c2828;
+    }
+
   }
 
   &--thirdly {
@@ -145,11 +172,30 @@ a {
     background-color: transparent;
 
 
-    &:hover {
-      color: var(--light-color);
-      background-color: var(--color-main);
+    @include for-desktop {
+      &:hover {
+        color: var(--light-color);
+        background-color: var(--color-main);
+      }
+    }
+
+    &:active {
+      background-color: #8c2828;
     }
   }
+}
+
+.btn--primary.focus-visible {
+  background-color: var(--color-accent-hover);
+}
+
+.btn--secondary.focus-visible {
+  background-color: var(--color-main-hover);
+}
+
+.btn--thirdly.focus-visible {
+  color: var(--light-color);
+  background-color: var(--color-main);
 }
 
 .title {
@@ -159,7 +205,7 @@ a {
   color: var(--color-main);
 }
 
-@import 'mixins';
+
 
 .custom-checkbox {
   @include custom-checkbox;
@@ -186,6 +232,10 @@ a {
       background-image: url("../img/check.svg");
       background-size: 15px 12px;
     }
+  }
+
+  .custom-checkbox__field+.custom-checkbox__content::before {
+    outline: 2px solid var(--color-accent);
   }
 }
 

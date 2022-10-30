@@ -87,6 +87,19 @@ export function products() {
               clamp: '22px'
             });
           });
+          const productSBtns = document.querySelectorAll('.product__btn');
+
+          productSBtns.forEach(el => {
+
+            el.addEventListener('focus', (e) => {
+              let parent = e.currentTarget.closest('.product__btns');
+              parent.classList.add('product__btns--active');
+            }, true);
+            el.addEventListener('blur', (e) => {
+              let parent = e.currentTarget.closest('.product__btns');
+              parent.classList.remove('product__btns--active');
+            }, true);
+          });
           cartLogic();
 
 
@@ -327,6 +340,8 @@ export function products() {
         const id = e.currentTarget.dataset.id;
 
         loadCartData(id);
+
+        document.querySelector('.cart__btn').classList.remove('cart__btn--inactive');
         e.currentTarget.classList.add('product__btn--disabled');
       });
     });
@@ -346,11 +361,12 @@ export function products() {
         minusFullPrice(price);
         printFullPrice();
 
-        let num = document.querySelectorAll('.mini-cart__item').length;
+        let num = document.querySelectorAll('.mini-cart__list .mini-cart__item').length;
 
         if (num == 0) {
           cartCount.classList.remove('cart__count--visible');
           miniCart.classList.remove('mini-cart--visible');
+          document.querySelector('.cart__btn').classList.add('cart__btn--inactive');
         }
 
         printQuantity(num);
@@ -359,6 +375,79 @@ export function products() {
 
 
   };
+  const openOrderModal = document.querySelector('.mini-cart__btn');
+  const orderModalList = document.querySelector('.cart-modal-order__list');
+  const orderModalQuantity = document.querySelector('.cart-modal-order__quantity span');
+  const orderModalSumm = document.querySelector('.cart-modal-order__summ span');
+  const orderModalShow = document.querySelector('.cart-modal-order__show');
 
 
+  openOrderModal.addEventListener('click', () => {
+
+    const productsHtml = miniCartList.innerHTML;
+    orderModalList.innerHTML = productsHtml;
+
+    orderModalQuantity.textContent = `${document.querySelectorAll('.mini-cart__list .mini-cart__item').length}шт`;
+
+    orderModalSumm.textContent = fullPrice.textContent;
+
+
+  });
+  orderModalShow.addEventListener('click', () => {
+    // orderModalList.classList.toggle('cart-modal-order__list--visible');
+    if (orderModalList.classList.contains('cart-modal-order__list--visible')) {
+      orderModalList.classList.remove('cart-modal-order__list--visible');
+      orderModalShow.classList.remove('cart-modal-order__show--active');
+    } else {
+      orderModalList.classList.add('cart-modal-order__list--visible');
+      orderModalShow.classList.add('cart-modal-order__show--active');
+    }
+
+
+  });
+
+  // удаление из модалки
+  orderModalList.addEventListener('click', (e) => {
+    if (e.target.classList.contains('mini-product__delete')) {
+      console.log('asd')
+      const self = e.target;
+      const parent = self.closest('.mini-cart__item');
+      const price = parseInt(priceWithoutSpaces(parent.querySelector('.mini-product__price').textContent));
+      const id = parent.dataset.id;
+
+      console.log(document.querySelector(`.product__btn[data-id="${id}"]`))
+
+      document.querySelector(`.add-to-cart-btn[data-id="${id}"]`).classList.remove('product__btn--disabled');
+
+      parent.style.display = 'none';
+
+      //setTimeout(() => {
+      parent.remove();
+
+      //}, 100);
+
+      document.querySelector(`.mini-cart__item[data-id="${id}"]`).remove();
+
+
+      minusFullPrice(price);
+      printFullPrice();
+
+      setTimeout(() => {
+        let num = document.querySelectorAll('.cart-modal-order__list .mini-cart__item').length;
+        
+
+        if (num == 0) {
+          cartCount.classList.remove('cart__count--visible');
+          miniCart.classList.remove('mini-cart--visible');
+          document.querySelector('.cart__btn').classList.add('cart__btn--inactive');
+
+          modal.close();
+        }
+
+        printQuantity(num);
+      }, 100);
+
+
+    }
+  });
 }
