@@ -56,7 +56,6 @@
   }
 
   &__btn {
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -70,9 +69,8 @@
     svg {
       width: 30px;
       height: 30px;
-      fill: white;
+      fill:  var(--light-color);
       object-fit: cover;
-
     }
 
     &:focus {
@@ -80,7 +78,6 @@
     }
 
     @include for-desktop {
-
       &:hover {
         background-color: var(--color-main-hover);
       }
@@ -93,10 +90,6 @@
     &:first-child {
       margin-right: var(--main-offset);
     }
-
-
-
-    outline: none;
 
     &--disabled {
       opacity: 0.4;
@@ -112,7 +105,6 @@
       }
     }
   }
-
 }
 
 .mini-product {
@@ -131,10 +123,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+    }
 
-      @include mobile {
-        width: calc(100vw - 30px);
-      }
+    @include mobile {
+      width: 60px;
+      height: 60px;
     }
   }
 
@@ -163,13 +156,10 @@
   }
 
   &__delete {
+    flex-shrink: 0;
     width: 20px;
     height: 20px;
     font-size: 0;
-
-    @include mobile {
-      flex-shrink: 0;
-    }
 
     svg {
       display: block;
@@ -236,6 +226,10 @@
       svg {
         display: none;
       }
+    }
+
+    @include mobile {
+      display: block;
     }
   }
 }

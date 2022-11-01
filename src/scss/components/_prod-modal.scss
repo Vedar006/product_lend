@@ -2,29 +2,9 @@
 
 .modal {
   @include tablet {
-
     &::before {
       display: none;
     }
-  }
-}
-
-.graph-modal__close {
-  display: block;
-  width: 20px;
-  height: 20px;
-
-
-  
-
-
-
-  @include small-tablet {
-    z-index: 100;
-    display: block;
-    color: black;
-    background-color: #000;
-
   }
 }
 
@@ -33,8 +13,14 @@
   padding: var(--main-offset);
   width: 1140px;
 
+  .modal__close {
+    display: none;
 
-
+    @include small-tablet {
+      z-index: 100;
+      display: block;
+    }
+  }
 
   &__top {
     display: flex;
@@ -91,7 +77,6 @@
     margin-bottom: 30px;
     width: 100%;
   }
-
 }
 
 .modal-info {
@@ -108,12 +93,20 @@
     font: var(--middle-book);
     line-height: 16px;
     color: var(--color-gray);
+
+    @include mobile {
+      flex-direction: column;
+    }
   }
 
   &__vendor {
     margin-right: var(--main-offset);
 
     @include tablet {
+      margin-right: 10px;
+    }
+
+    @include mobile {
       margin-right: 0;
       margin-bottom: 10px;
     }
@@ -121,7 +114,7 @@
 
   &__quantity {
     span {
-      color: var(--color-main)
+      color: var(--color-main);
     }
   }
 
@@ -131,7 +124,6 @@
     font: var(--prehigh-book);
     line-height: 140%;
     color: var(--color-main);
-
   }
 
   &__rate {
@@ -144,10 +136,6 @@
     font: var(--middle-book);
     line-height: 16px;
     color: var(--color-main);
-  }
-
-  &__sizes {
-    margin-bottom: var(--second-offset);
   }
 
   &__price {
@@ -166,7 +154,6 @@
     font: var(--middle-book);
     line-height: 16px;
     color: var(--color-gray);
-
   }
 
   &__order {
@@ -182,16 +169,14 @@
     margin: 0;
     width: 100%;
   }
-
 }
 
 .modal-sizes {
-  display: inline-flex;
-  align-items: center;
+  display: flex;
   flex-wrap: wrap;
+  align-items: center;
 
   &__item {
-
     margin-bottom: var(--second-offset);
 
     &:not(:last-child) {
@@ -200,7 +185,7 @@
   }
 
   &__btn {
-    display: flex;
+    display: inline-flex;
     align-items: center;
     justify-content: center;
     border: 1px solid var(--color-gray);
@@ -212,19 +197,15 @@
   }
 }
 
-
-
 .modal-preview {
   display: grid;
   grid-template-columns: repeat(6, 70px);
   gap: var(--second-offset);
 
   &__item {
-
     border-radius: 4px;
-
     height: 75px;
-    transition: opacity .3s;
+    transition: opacity 0.3s;
     cursor: pointer;
 
     img {
@@ -232,14 +213,11 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-
     }
 
     @include for-desktop {
       &:hover {
         opacity: 0.7;
-
-
       }
     }
 
@@ -248,65 +226,61 @@
       pointer-events: none;
     }
   }
+}
 
-  .modal-note {
-    margin-top: var(--second-offset);
+.modal-note {
+  margin-top: var(--second-offset);
 
-    &__item {
+  &__item {
+    padding-left: 25px;
+    font: var(--small-book);
+    color: var(--color-gray);
+    background-image: url("../img/check-list.svg");
+    background-position: left center;
+    background-size: 15px 12px;
+    background-repeat: no-repeat;
 
-      padding-left: 25px;
-      font: var(--small-book);
-      color: var(--color-gray);
+    &:not(:last-child) {
+      margin-bottom: var(--small-offset);
+    }
+  }
+}
 
-      background-image: url("../img/check1.svg");
+.prod-bottom {
+  display: flex;
 
-      background-position: left center;
-      background-size: 15px 12px;
-      background-repeat: no-repeat;
+  &__column {
+    width: calc(50% - (var(--second-offset) / 2));
 
-      &:not(:last-child) {
-        margin-bottom: var(--small-offset);
+    &:first-child {
+      margin-right: var(--second-offset);
+    }
+
+    @include small-tablet {
+      width: 100%;
+
+      &:first-child {
+        margin-right: 0;
+        margin-bottom: 30px;
       }
     }
   }
 
-  .prod-bottom {
-    display: flex;
+  &__title {
+    margin: 0;
+    margin-bottom: var(--second-offset);
+    font: var(--prehigh-book);
+    color: var(--color-main);
+  }
 
-    &__column {
-      width: calc(50% - (var(--second-offset) / 2));
+  &__descr {
+    margin: 0;
+    max-width: 450px;
+    font: var(--middle-book);
+    color: var(--color-main);
+  }
 
-      &:first-child {
-        margin-right: var(--second-offset);
-      }
-
-      @include small-tablet {
-        width: 100%;
-
-        &:first-child {
-          margin-right: 0;
-          margin-bottom: 30px;
-        }
-      }
-
-      &__title {
-        margin: 0;
-        margin-bottom: var(--second-offset);
-        font: var(--prehigh-book);
-        color: var(--color-main);
-
-      }
-
-      &__descr {
-        margin: 0;
-        max-width: 450px;
-        font: var(--middle-book);
-        color: var(--color-main);
-      }
-
-      @include small-tablet {
-        display: block;
-      }
-    }
+  @include small-tablet {
+    display: block;
   }
 }

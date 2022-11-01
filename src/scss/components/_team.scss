@@ -44,10 +44,10 @@
     margin-bottom: var(--second-offset);
     font: var(--prehigh-book);
     color: var(--light-color);
-
   }
 
   &__post {
+    display: block;
     font: var(--middle-book);
     color: var(--light-color);
   }

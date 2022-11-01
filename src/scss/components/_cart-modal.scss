@@ -1,18 +1,27 @@
-@import "../mixins";
+@import '../mixins';
+
 .cart-modal {
   border-radius: 4px;
   padding: var(--main-offset);
   width: 580px;
 
+  .modal__close {
+    display: none;
 
+    @include small-tablet {
+      z-index: 100;
+      display: block;
+    }
+  }
 
   &__top {
     display: flex;
     align-items: center;
     justify-content: space-between;
     margin-bottom: var(--main-offset);
-    @include small-tablet {
 
+    @include small-tablet {
+      display: block;
     }
   }
 
@@ -58,6 +67,10 @@
     span {
       font-weight: 700;
       color: var(--color-main);
+    }
+
+    @include mobile {
+      font-size: 14px;
     }
   }
 

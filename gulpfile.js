@@ -38,6 +38,7 @@ const rootFolder = path.basename(path.resolve());
 // paths
 const srcFolder = './src';
 const buildFolder = './app';
+// const buildFolder = "C:/MAMP/htdocs/app";
 const paths = {
   srcSvg: `${srcFolder}/img/svg/**.svg`,
   srcImgFolder: `${srcFolder}/img`,
@@ -92,7 +93,9 @@ const svgSprites = () => {
 
 // scss styles
 const styles = () => {
-  return src(paths.srcScss, { sourcemaps: !isProd })
+  return src(paths.srcScss, {
+      sourcemaps: !isProd
+    })
     .pipe(plumber(
       notify.onError({
         title: "SCSS",
@@ -108,7 +111,9 @@ const styles = () => {
     .pipe(gulpif(isProd, cleanCSS({
       level: 2
     })))
-    .pipe(dest(paths.buildCssFolder, { sourcemaps: '.' }))
+    .pipe(dest(paths.buildCssFolder, {
+      sourcemaps: '.'
+    }))
     .pipe(browserSync.stream());
 };
 

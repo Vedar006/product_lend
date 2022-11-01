@@ -22,3 +22,11 @@ import {
   focus
 } from "./components/focus";
 focus();
+import {
+  burger
+} from "./components/burger";
+burger();
+import {
+  validate
+} from "./components/validate";
+validate();

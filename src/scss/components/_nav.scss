@@ -1,24 +1,32 @@
+@import "../mixins";
+
 .nav {
-
-
   &__list {
     display: flex;
     align-self: center;
+
+    @include tablet {
+      flex-direction: column;
+    }
   }
 
   &__item {
     &:not(:last-child) {
       margin-right: var(--main-offset);
+
+      @include tablet {
+        margin-right: 0;
+        margin-bottom: var(--main-offset);
+      }
     }
   }
 
   &__link {
-
     position: relative;
     outline: none;
     font: var(--small-book);
     color: var(--light-color);
-    transition: opacity .3s ease-in-out;
+    transition: opacity 0.3s ease-in-out;
 
     &::before {
       content: "";
@@ -30,7 +38,7 @@
       background-color: currentColor;
       transform: scaleX(0);
       transform-origin: left;
-      transition: transform .3s ease-in-out;
+      transition: transform 0.3s ease-in-out;
     }
 
     &:focus {
@@ -39,8 +47,11 @@
       }
     }
 
-    @include for-desktop {
+    @include tablet {
+      font: var(--prehigh-regular);
+    }
 
+    @include for-desktop {
       &:hover {
         &::before {
           transform: scaleX(1);
@@ -49,8 +60,8 @@
     }
 
     &:active {
-      opacity: .8;
-      transition: opacity .3s ease-in-out;
+      opacity: 0.8;
+      transition: opacity 0.3s ease-in-out;
     }
   }
 }
